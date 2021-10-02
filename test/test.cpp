@@ -3,7 +3,8 @@
 
 ControllerPID Test_PID_class;
 /**
- * @brief Calls TEST case called Unit_Test to ensure expec
+ * @brief Tests to make sure the first iteration of ComputerPID is calculating
+ * the PID output properly
  * 
  */
 TEST(compute_initialPID, should_pass) {
@@ -33,7 +34,8 @@ TEST(PID_Converges, should_pass) {
 }
 
 /**
- * @brief Test to verify set_Kvalues and getters for K values are updated properly
+ * @brief Test to verify set_Kvalues and getters for K values are updated 
+ * properly
  * 
  */
 TEST(KValues_Updated, should_pass) {
@@ -41,7 +43,8 @@ TEST(KValues_Updated, should_pass) {
   // Sets some K values to ensure set_Kvalues function works
   Test_PID_class.set_Kvalues(.25,.50,.35);
 
-  // Checks to ensure Kvalues are updated within the class, using the getter functions
+  // Checks to ensure Kvalues are updated within the class, using the 
+  // getter functions
   float retrieved_Kp = Test_PID_class.get_Kp();
   float retrieved_Ki = Test_PID_class.get_Ki();
   float retrieved_Kd = Test_PID_class.get_Kd();
