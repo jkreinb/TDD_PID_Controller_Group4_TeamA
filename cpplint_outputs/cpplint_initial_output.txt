@@ -1,0 +1,10 @@
+jon@jon-VirtualBox:~/TDD_Group4_TeamA/cpp-boilerplate$ cpplint app/main.cpp
+Done processing app/main.cpp
+jon@jon-VirtualBox:~/TDD_Group4_TeamA/cpp-boilerplate$ cpplint app/controllerpid.cpp
+Done processing app/controllerpid.cpp
+jon@jon-VirtualBox:~/TDD_Group4_TeamA/cpp-boilerplate$ cpplint include/controllerpid.hpp
+Done processing include/controllerpid.hpp
+jon@jon-VirtualBox:~/TDD_Group4_TeamA/cpp-boilerplate$ cpplint test/main.cpp
+Done processing test/main.cpp
+jon@jon-VirtualBox:~/TDD_Group4_TeamA/cpp-boilerplate$ cpplint test/test.cpp
+Done processing test/test.cpp
