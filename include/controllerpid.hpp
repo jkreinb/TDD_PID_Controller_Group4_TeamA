@@ -1,5 +1,5 @@
 /**
- * @file Controller_pid.hpp
+ * @file controllerpid.hpp
  * @author Jon Kreinbrink, Abhishek Nalawade
  * @brief Declares a PID controller class that computes velocity given a target
  * setpoint and actual velocity
@@ -15,14 +15,14 @@
 #include <iostream>
 #include <utility>
 
-class Controller_pid
+class ControllerPID
 {
 
 public:
-    Controller_pid(){
-        Kp = .35;
-        Ki = .25;
-        Kd = .15;
+    ControllerPID(){
+        Kp = .15;
+        Ki = .05;
+        Kd = .02;
         timeStep = .1; // Time step in seconds
         past_error = 0; // Initializes with past error of 0
         }
@@ -32,7 +32,7 @@ public:
      * 
      * @return float value_PID, the PID control variable output until reaches set point
      */
-    float computePID(float setpoint, float velocity){
+    float ComputePID(float setpoint, float velocity){
         float value_PID = 9;
 
         // // Calculates proportional gain portion of PID
@@ -54,7 +54,7 @@ public:
      * @param test_Ki 
      * @param test_Kd 
      */
-    void setK_values(float test_Kp, float test_Ki, float test_Kd){ //
+    void set_SKvalues(float test_Kp, float test_Ki, float test_Kd){ //
         Kp = test_Kp;
         Ki = test_Ki;
         Kd = test_Kd;

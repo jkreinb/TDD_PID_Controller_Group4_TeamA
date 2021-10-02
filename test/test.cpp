@@ -1,13 +1,14 @@
 #include <gtest/gtest.h>
-#include <../include/Controller_pid.hpp>
+#include <../include/controllerpid.hpp>
 
-Controller_pid Test_PID_class;
+ControllerPID Test_PID_class;
 /**
- * @brief Calls TEST case called Unit_Test
+ * @brief Calls TEST case called Unit_Test to ensure expec
  * 
  */
 TEST(compute_initialPID, should_pass) {
-   EXPECT_EQ(Test_PID_class.computePID(50, 20), .3456);
+
+   EXPECT_NEAR((Test_PID_class.ComputePID(50, 20)), 10.650, .2); 
 }
 
 /**
@@ -23,14 +24,11 @@ TEST(PID_Converges, should_pass) {
   float test_speed = 20;
 
   // For loop to call the computePID method 1000 times
-  // for (int i = 0; i<1000; i++){
-  //   float add = Test_PID_class.computePID(setpoint, test_speed)
-  //     test_speed += add;
-  // }
+   for (int i = 0; i<1000; i++){
+     float add = Test_PID_class.ComputePID(setpoint, test_speed);
+     test_speed += add;
+ }
 
-  // Calculates how far the final speed is from the original set point
-  float percent_off = (test_speed-setpoint)/setpoint;
-
-  // Tests if current speed is within 2% of set point after 1000 time steps
-   EXPECT_LT(percent_off, .02 );
+  // Tests if current speed is within 1% of set point after 1000 time steps
+  EXPECT_NEAR(test_speed, setpoint, .5);
 }
