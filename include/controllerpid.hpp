@@ -13,53 +13,57 @@
 #pragma once
 
 #include <iostream>
-#include <utility>
 
 class ControllerPID
 {
-
 public:
+    // Default Constructor
     ControllerPID(){
         Kp = .15;
         Ki = .05;
         Kd = .02;
-        timeStep = .1; // Time step in seconds
+        timeStep = .1; // Default time step in seconds
         past_error = 0; // Initializes with past error of 0
         }
 
     /**
-     * @brief Computes PID value using private gain values
+     * @brief Calculates velocity change for one time step using PID equation
      * 
-     * @return float value_PID, the PID control variable output until reaches set point
+     * @param setpoint Target setpoint for velocity
+     * @param velocity Initial velocity for this time step
+     * @return float Change in velocity calculated using PID equation
      */
-    float ComputePID(float setpoint, float velocity){
-        float value_PID = 9;
-
-        // // Calculates proportional gain portion of PID
-        // float proportional_gain = Kp*(velocity - setpoint);
-
-        // // Calculates derivative gain portion of PID
-        // float derivative_gain = Kd*((current_error - past_error)/timeStep);
-
-        // // Calculates integral gain portion of PID
-        // float integral_gain = integral_gain + Ki*timeStep*(current_error-past_error);
-
-        return value_PID;
-    } 
+    float ComputePID(float setpoint, float velocity);
 
     /**
-     * @brief Set the K values for the object
+     * @brief Set the K values for the PID controller
      * 
-     * @param test_Kp 
-     * @param test_Ki 
-     * @param test_Kd 
+     * @param test_Kp Proportional gain value
+     * @param test_Ki Integral gain value
+     * @param test_Kd Derivative gain value
      */
-    void set_SKvalues(float test_Kp, float test_Ki, float test_Kd){ //
-        Kp = test_Kp;
-        Ki = test_Ki;
-        Kd = test_Kd;
-    }
+    void set_Kvalues(float test_Kp, float test_Ki, float test_Kd);
 
+    /**
+     * @brief Getter for proportional gain Kp
+     * 
+     * @return float 
+     */
+    float get_Kp();
+
+    /**
+     * @brief Getter for derivative gain Kd
+     * 
+     * @return float 
+     */
+    float get_Kd();
+
+    /**
+     * @brief Getter for integral gain Ki
+     * 
+     * @return float 
+     */
+    float get_Ki();
 
 private:
     float Kp; // Proportional gain value
