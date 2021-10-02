@@ -1,29 +1,26 @@
 /**
  * @file controllerpid.hpp
- * @author Jon Kreinbrink, Abhishek Nalawade
- * @brief Declares a PID controller class that computes velocity given a target
- * setpoint and actual velocity
+ * @author Jonathon Kreinbrink (Driver) Abhishek Nalawade (Observer) Team A
+ * @brief Header file for the controllerpid class
  * @version 0.1
- * @date 2021-10-01
+ * @date 2021-10-02
  * 
- * @copyright Copyright (c) 2021
- * 
+ * @copyright Copyright (c) 2021 Jonathon Kreinbrink, Abhishek Nalawade
  */
 
 #pragma once
 
 #include <iostream>
 
-class ControllerPID
-{
-public:
+class ControllerPID {
+ public:
     // Default Constructor
-    ControllerPID(){
+    ControllerPID() {
         Kp = .15;
         Ki = .05;
         Kd = .02;
-        timeStep = .1; // Default time step in seconds
-        past_error = 0; // Initializes with past error of 0
+        timeStep = .1;  // Default time step in seconds
+        past_error = 0;  // Initializes with past error of 0
         }
 
     /**
@@ -65,14 +62,13 @@ public:
      */
     float get_Ki();
 
-private:
-    float Kp; // Proportional gain value
-    float Ki; // Integral gain value
-    float Kd; // Derivative gain value
-    float past_error; // Error for the previous timestep
-    float current_error; // Current error
-    float timeStep; // Time step
-    float set_velocity; // Goal velocity
-    
+ private:
+    float Kp;  // Proportional gain value
+    float Ki;  // Integral gain value
+    float Kd;  // Derivative gain value
+    float past_error;  // Error for the previous timestep
+    float current_error;  // Current error
+    float timeStep;  // Time step
+    float set_velocity;  // Goal velocity
 };
 

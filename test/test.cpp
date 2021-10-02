@@ -1,3 +1,13 @@
+/**
+ * @file test.cpp
+ * @author Jonathon Kreinbrink (Driver) Abhishek Nalawade (Observer) Team A
+ * @brief Source code for google tests to be conducted on the shell-app
+ * @version 0.1
+ * @date 2021-10-02
+ * 
+ * @copyright Copyright (c) 2021 Jonathon Kreinbrink, Abhishek Nalawade
+ */
+
 #include <gtest/gtest.h>
 #include <../include/controllerpid.hpp>
 
@@ -8,7 +18,7 @@ ControllerPID Test_PID_class;
  * 
  */
 TEST(compute_initialPID, should_pass) {
-   EXPECT_NEAR((Test_PID_class.ComputePID(50, 20)), 10.650, .2); 
+  EXPECT_NEAR((Test_PID_class.ComputePID(50, 20)), 10.650, .2);
 }
 
 /**
@@ -18,16 +28,15 @@ TEST(compute_initialPID, should_pass) {
  * 
  */
 TEST(PID_Converges, should_pass) {
-  
   // Initial setpoint and initial velocity for test case
   float setpoint = 50;
   float test_speed = 20;
 
   // For loop to call the computePID method 1000 times
-   for (int i = 0; i<1000; i++){
-     float add = Test_PID_class.ComputePID(setpoint, test_speed);
-     test_speed += add;
- }
+  for (int i = 0; i < 1000; i++) {
+    float add = Test_PID_class.ComputePID(setpoint, test_speed);
+    test_speed += add;
+}
 
   // Tests if current speed is within 1% of set point after 1000 time steps
   EXPECT_NEAR(test_speed, setpoint, .5);
@@ -39,17 +48,16 @@ TEST(PID_Converges, should_pass) {
  * 
  */
 TEST(KValues_Updated, should_pass) {
-
   // Sets some K values to ensure set_Kvalues function works
-  Test_PID_class.set_Kvalues(.25,.50,.35);
+  Test_PID_class.set_Kvalues(.25, .50, .35);
 
-  // Checks to ensure Kvalues are updated within the class, using the 
+  // Checks to ensure Kvalues are updated within the class, using the
   // getter functions
   float retrieved_Kp = Test_PID_class.get_Kp();
   float retrieved_Ki = Test_PID_class.get_Ki();
   float retrieved_Kd = Test_PID_class.get_Kd();
 
-  EXPECT_FLOAT_EQ(retrieved_Kp,.25);
-  EXPECT_FLOAT_EQ(retrieved_Ki,.50);
-  EXPECT_FLOAT_EQ(retrieved_Kd,.35);
+  EXPECT_FLOAT_EQ(retrieved_Kp, .25);
+  EXPECT_FLOAT_EQ(retrieved_Ki, .50);
+  EXPECT_FLOAT_EQ(retrieved_Kd, .35);
 }

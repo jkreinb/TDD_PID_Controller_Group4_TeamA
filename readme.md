@@ -1,13 +1,17 @@
 # C++ Boilerplate
 [![Build Status](https://app.travis-ci.com/jkreinb/cpp-boilerplate.svg?branch=master)](https://app.travis-ci.com/jkreinb/cpp-boilerplate)
-[![Coverage Status](https://coveralls.io/repos/github/jkreinb/cpp-boilerplate/badge.svg?branch=master)](https://coveralls.io/github/jkreinb/cpp-boilerplate?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/jkreinb/cpp-boilerplate/badge.svg)](https://coveralls.io/github/jkreinb/cpp-boilerplate)
 ---
 
 ## Authors
 
 Part 1:
-Driver: Jon Kreinbrink
-Navigator: Abhishek Nalawade
+- Driver: Jon Kreinbrink 
+- Navigator: Abhishek Nalawade
+
+## To-Do
+
+Implement ComputePID function
 
 ## Overview
 
