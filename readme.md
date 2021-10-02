@@ -3,6 +3,12 @@
 [![Coverage Status](https://coveralls.io/repos/github/jkreinb/cpp-boilerplate/badge.svg?branch=master)](https://coveralls.io/github/jkreinb/cpp-boilerplate?branch=master)
 ---
 
+## Authors
+
+Part 1:
+Driver: Jon Kreinbrink
+Navigator: Abhishek Nalawade
+
 ## Overview
 
 Simple starter C++ project with:
