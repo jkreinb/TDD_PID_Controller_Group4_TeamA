@@ -21,7 +21,7 @@
 
 int main() {
   ControllerPID pid;
-  float new_kp, new_ki, new_kd, setpoint, velocity;
+  float setpoint, velocity;
   char ans;
   // Displaying the default gain values.
   std::cout << "The default gain values are - " << std::endl;
@@ -32,6 +32,7 @@ int main() {
   std::cout << "Do you want to change the gain value? (y/n)" << std::endl;
   std::cin >> ans;
   if (ans == 'y') {
+    float new_kp, new_ki, new_kd;
     std::cout << "Enter the new gains for Kp, Ki and Kd : ";
     std::cin >> new_kp >> new_ki >> new_kd;
     std::cout << "" << std::endl;

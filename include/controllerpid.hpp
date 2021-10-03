@@ -23,7 +23,8 @@ class ControllerPID {
     Kd = .02;
     timeStep = .1;      // Default time step in seconds
     past_error = 0;     // Initializes with past error of 0
-    current_error = 0;  // Variable to store error in each iteration
+    current_error = 0; // Variable to store error in each iteration
+    goal_velocity = 0; // Variable to store the final velocity
   }
 
   /**
@@ -80,7 +81,6 @@ class ControllerPID {
   void set_goal_velocity(float _goal_velocity);
 
  private:
-  float something;
   float Kp;             // Proportional gain value
   float Ki;             // Integral gain value
   float Kd;             // Derivative gain value
