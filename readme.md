@@ -16,7 +16,11 @@ Part 2:
 ## To-Do
 - Update the UML class diagram
 - Activity diagram missing
-- Generate Documentation 
+- Documentation generated but cannot see the documentation for the functions.
+
+## Notes
+- We have added new variables
+- The first test case was intersting and we think that was a very good test to ensure that we get the right output.
 
 ## Overview
 
