@@ -14,8 +14,9 @@ Part 2:
 - Navigator: Maitreya Kulkarni
 
 ## To-Do
-
-Implement ComputePID function
+- Update the UML class diagram
+- Activity diagram missing
+- Generate Documentation 
 
 ## Overview
 
