@@ -9,9 +9,18 @@ Part 1:
 - Driver: Jon Kreinbrink 
 - Navigator: Abhishek Nalawade
 
-## To-Do
+Part 2:
+- Driver: Markose Jacob
+- Navigator: Maitreya Kulkarni
 
-Implement ComputePID function
+## To-Do
+- Update the UML class diagram
+- Activity diagram missing
+- Documentation generated but cannot see the documentation for the functions.
+
+## Notes
+- We have added new variables
+- The first test case was intersting and we think that was a very good test to ensure that we get the right output.
 
 ## Overview
 
