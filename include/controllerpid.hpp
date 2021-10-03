@@ -22,7 +22,7 @@ class ControllerPID {
         Kd = .02;
         timeStep = .1;  // Default time step in seconds
         past_error = 0;  // Initializes with past error of 0
-        current_error = 0;
+        current_error = 0; // Variable to store error in each iteration
         }
 
     /**
@@ -64,8 +64,18 @@ class ControllerPID {
      */
     float get_Ki();
 
+     /**
+     * @brief Getter for velocity at each iteration
+     * 
+     * @return float 
+     */
     float get_goal_velocity();
 
+     /**
+     * @brief Setter for initialising the velocity with initial velocity
+     * 
+     * @return nil
+     */
     void set_goal_velocity(float _goal_velocity);
 
  private:

@@ -72,10 +72,20 @@ float ControllerPID::get_Ki() {
     return Ki;
 }
 
+/**
+ * @brief Getter for velocity at each iteration
+ * 
+ * @return float 
+ */
 float ControllerPID::get_goal_velocity(){
     return goal_velocity;
 }
 
+/**
+ * @brief Setter for initialising the velocity with initial velocity
+ * 
+ * @return nil
+ */
 void ControllerPID::set_goal_velocity(float _goal_velocity){
     goal_velocity = _goal_velocity;
 }
