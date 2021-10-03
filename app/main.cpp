@@ -27,7 +27,7 @@ int main() {
         std::cin>>new_kp>>new_ki>>new_kd;
         std::cout<<""<<std::endl;
         pid.set_Kvalues(new_kp,new_ki,new_kd);
-        std::cout<<"The new gains are - "<<std::endl;
+        std::cout<<"The new gains are :- "<<std::endl;
         std::cout<<"Kp : "<<pid.get_Kp()<<std::endl;
         std::cout<<"Ki : "<<pid.get_Ki()<<std::endl;
         std::cout<<"Kd : "<<pid.get_Kd()<<std::endl;
