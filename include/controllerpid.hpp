@@ -14,6 +14,7 @@
 
 class ControllerPID {
  public:
+    float intergral = 0;
     // Default Constructor
     ControllerPID() {
         Kp = .15;
@@ -21,6 +22,7 @@ class ControllerPID {
         Kd = .02;
         timeStep = .1;  // Default time step in seconds
         past_error = 0;  // Initializes with past error of 0
+        current_error = 0;
         }
 
     /**
@@ -62,6 +64,10 @@ class ControllerPID {
      */
     float get_Ki();
 
+    float get_goal_velocity();
+
+    void set_goal_velocity(float _goal_velocity);
+
  private:
     float Kp;  // Proportional gain value
     float Ki;  // Integral gain value
@@ -69,6 +75,6 @@ class ControllerPID {
     float past_error;  // Error for the previous timestep
     float current_error;  // Current error
     float timeStep;  // Time step
-    float set_velocity;  // Goal velocity
+    float goal_velocity;  // Goal velocity
 };
 

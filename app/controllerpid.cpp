@@ -10,7 +10,7 @@
  */
 
 #include <iostream>
-#include <../include/controllerpid.hpp>
+#include "../include/controllerpid.hpp"
 
 /**
  * @brief Calculates velocity change for one time step using PID equation
@@ -20,8 +20,16 @@
  * @return float Change in velocity calculated using PID equation
  */
 float ControllerPID::ComputePID(float setpoint, float velocity) {
-    float value_PID = 50;
-    return value_PID;
+    float p_gain, i_gain, d_gain, deravative, answer;
+    current_error = setpoint - velocity;
+    p_gain = Kp * current_error;
+    intergral += current_error * timeStep;
+    i_gain = Ki * intergral;
+    deravative = (current_error - past_error)/timeStep;
+    d_gain = Kd * deravative;
+    answer = p_gain + i_gain+ d_gain;
+    past_error = current_error;
+    return answer;
 }
 
 /**
@@ -62,4 +70,12 @@ float ControllerPID::get_Kd() {
  */
 float ControllerPID::get_Ki() {
     return Ki;
+}
+
+float ControllerPID::get_goal_velocity(){
+    return goal_velocity;
+}
+
+void ControllerPID::set_goal_velocity(float _goal_velocity){
+    goal_velocity = _goal_velocity;
 }

@@ -9,6 +9,10 @@ Part 1:
 - Driver: Jon Kreinbrink 
 - Navigator: Abhishek Nalawade
 
+Part 2:
+- Driver: Markose Jacob
+- Navigator: Maitreya Kulkarni
+
 ## To-Do
 
 Implement ComputePID function
